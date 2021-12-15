@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -33,6 +33,14 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ReadBooks\ReadBooks.Android\ReadBooks.Android.csproj">
+      <Project>{f3b8c60a-3589-4bc7-b7fa-0e3f46ca2091}</Project>
+      <Name>ReadBooks.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReadBooks\ReadBooks.iOS\ReadBooks.iOS.csproj">
+      <Project>{7b2948da-07ac-48dc-8512-703c1851835d}</Project>
+      <Name>ReadBooks.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests.cs" />

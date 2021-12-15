@@ -26,12 +26,16 @@ namespace ReadBooks.Tests
         }
 
         [Test]
-        public void WelcomeTextIsDisplayed()
+        public void AppNavigatesToLogin()
         {
-            AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin.Forms!"));
-            app.Screenshot("Welcome screen.");
+            app.Tap(c => c.Text("Login"));
+            //app.Repl();
 
-            Assert.IsTrue(results.Any());
+            app.WaitForElement(c => c.Marked("LoginPageLoginButton"),
+                "Did not see the login button",
+                new TimeSpan(0, 0, 2));
+            var result = app.Query(c => c.Marked("LoginPageLoginButton"));
+            Assert.IsTrue(result.Any(), "Navigation to Login Page didn't'happen");
         }
     }
 }
